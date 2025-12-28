@@ -1,0 +1,59 @@
+.about-section {
+  padding: 60px 20px;
+  background-color: #f9fafb;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #1f2933;
+}
+
+.about-text {
+  font-size: 20px;        /* pehle 15px tha → thoda bada */
+  line-height: 1.5;       /* readable spacing */
+  color: #4b5563;     /* dark professional color */
+  text-align: left;       /* left se start */
+  margin: 40px;  
+}
+
+/* Image */
+.about-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Highlight boxes */
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.highlight-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.highlight-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.highlight-box p {
+  font-size: 13px;
+  color: #6b7280;
+}

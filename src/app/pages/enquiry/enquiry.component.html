@@ -1,0 +1,15 @@
+<form (ngSubmit)="submit()">
+  <input type="text" [(ngModel)]="enquiry.name" name="name" placeholder="Name" required>
+
+  <input type="text" [(ngModel)]="enquiry.mobile" name="mobile" placeholder="Mobile" required>
+
+  <select [(ngModel)]="enquiry.serviceType" name="serviceType">
+    <option>Gate Fabrication</option>
+    <option>Grill Work</option>
+    <option>Shed Work</option>
+  </select>
+
+  <textarea [(ngModel)]="enquiry.message" name="message"></textarea>
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Service</th>
+    <th>Date</th>
+  </tr>
+
+  <tr *ngFor="let e of enquiries">
+    <td>{{e.name}}</td>
+    <td>{{e.mobile}}</td>
+    <td>{{e.serviceType}}</td>
+    <td>{{e.createdAt | date}}</td>
+  </tr>
+</table>
