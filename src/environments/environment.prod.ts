@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://shreehansfab.up.railway.app'
+  apiUrl: 'https://shreehans-fabrication-backend.onrender.com'
 };
