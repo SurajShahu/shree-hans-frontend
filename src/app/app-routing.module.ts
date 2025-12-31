@@ -8,10 +8,13 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },          // Default Home
+  { path: 'services', component:ServicesComponent},
   { path: 'enquiry', component: EnquiryComponent },
   { path: 'admin', component: AdminLoginComponent },
   { path: 'about', component: AboutComponent },
@@ -23,7 +26,9 @@ const routes: Routes = [
     path: 'admin-dashboard',
     component: AdminDashboardComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  // ⚠️ ALWAYS LAST
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

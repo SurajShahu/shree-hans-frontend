@@ -20,6 +20,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CommonModule } from '@angular/common';
     ContactComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

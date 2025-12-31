@@ -8,11 +8,23 @@
   color: white;
 }
 
+/* LOGO SECTION */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 20px;
   font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* MENU */
 .menu {
   list-style: none;
   display: flex;

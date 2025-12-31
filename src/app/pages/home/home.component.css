@@ -4,21 +4,61 @@
 }
 
 .banner {
-  width: 100vw;         /* Full viewport width */
-  height: 400px;        /* Desired height */
-  margin: 0;            /* No margin */
-  padding: 0;           /* No padding */
-  overflow: hidden;     /* Extra part crop */
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
 }
 
+/* banner image */
 .banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* Image full cover */
-  display: block;
+  object-fit: cover;
 }
 
+/* overlay layer */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* adjust darkness */
+  z-index: 1;
+}
 
+/* content on top */
+.banner-content {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.banner-content h1 {
+  font-size: 35px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .banner-content h1 {
+    white-space: nowrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 24px;
+    white-space: normal;
+  }
+}
+
+.banner-content p {
+  font-size: 18px;
+}
 
 .quick-links {
   margin: 20px 0;

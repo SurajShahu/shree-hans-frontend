@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 28px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
