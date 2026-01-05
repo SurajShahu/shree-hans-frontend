@@ -1,110 +1,97 @@
 <div class="home-container">
 
-  <!-- Banner Image -->
-<div class="banner">
-  
-  <img src="assets/banner.png" alt="Shree Hans Fabrication" />
+  <!-- ================= BANNER ================= -->
+  <div class="banner">
+    <img src="assets/banner.png" alt="Shree Hans Fabrication" />
+    <div class="overlay"></div>
 
-  <!-- overlay layer -->
-  <div class="overlay"></div>
-
-  <!-- optional text -->
-  <div class="banner-content">
-  <h1>SHREE HANS FABRICATION IN NASHIK</h1>
-  <p>Expert Iron Fabrication, Welding & Custom Metal Work</p>
-  </div>
-</div>
-
-<section class="services-section">
-  <h2>Services</h2>
-
-  <div class="services-grid">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <div class="img-container">
-        <img src="assets/banner.png" alt="Safety Door">
-      </div>
-      <h3>Safety Door</h3>
-      <p>We provide the best safety doors for industrial and home purposes, ensuring top-notch quality and durability.</p>
-      <button class="enquire-btn">Enquire Now</button>
-    </div>
-
-    <!-- Service 2 -->
-    <div class="service-card">
-      <div class="img-container">
-        <img src="assets/banner.png" alt="Welding">
-      </div>
-      <h3>Welding Services</h3>
-      <p>Our expert team handles all types of welding projects with precision and safety for long-lasting results.</p>
-      <button class="enquire-btn">Enquire Now</button>
-    </div>
-
-    <!-- Service 3 -->
-    <div class="service-card">
-      <div class="img-container">
-        <img src="assets/banner.png" alt="Metal Fabrication">
-      </div>
-      <h3>Metal Fabrication</h3>
-      <p>Custom metal fabrication solutions tailored to your requirements, delivered with high-quality craftsmanship.</p>
-      <button class="enquire-btn">Enquire Now</button>
-    </div>
-
-    <!-- Service 4 -->
-    <div class="service-card">
-      <div class="img-container">
-        <img src="assets/banner.png" alt="Installation">
-      </div>
-      <h3>Installation</h3>
-      <p>We offer professional installation services to ensure your products are set up correctly and safely.</p>
-      <button class="enquire-btn">Enquire Now</button>
+    <div class="banner-content">
+      <h1>SHREE HANS FABRICATION IN NASHIK</h1>
+      <p>Expert Iron Fabrication, Welding & Custom Metal Work</p>
     </div>
   </div>
-</section>
 
+  <!-- ================= SERVICES ================= -->
+  <section class="services-section">
+    <h2>Services</h2>
 
+    <!-- ===== Enquiry Popup ===== -->
+    <div class="enquiry-overlay" *ngIf="showEnquiryForm">
+      <div class="enquiry-box">
 
-  <!-- Contact Info Cards -->
-  <div class="contact-cards">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Phone</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        +91 7020173248
-      </mat-card-content>
-    </mat-card>
+        <span class="close" (click)="closeEnquiryForm()">×</span>
+        <h2>Enquiry Form</h2>
 
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Email</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        info@shfabrication.com
-      </mat-card-content>
-    </mat-card>
-  </div>
-<section class="seo-details">
-  <details>
-    <summary>Our Fabrication & Welding Services in Nashik</summary>
-    <p>
-      Shree Hans Fabrication provides professional welding and fitting services,
-      including shed fabrication, grill and gate manufacturing, safety doors,
-      shutters, channel gates, latch locks, and iron repairing work.
-    </p>
+        <!-- FORM -->
+        <form (ngSubmit)="submit()" *ngIf="!success">
 
-    <p>
-      We specialize in custom iron work such as tables, stands, partitions,
-      windows, steps, roofs, and structures made using MS sheet and
-      polycarbonate sheet.
-    </p>
+          <input
+            type="text"
+            placeholder="Your Name"
+            [(ngModel)]="enquiry.name"
+            name="name"
+            required />
 
-    <p>
-      Our fabrication services are available in Indira Nagar, Nashik and nearby
-      areas. If you are searching for fabrication near me, welding near me,
-      or reliable iron work in Nashik, Shree Hans Fabrication is a trusted local choice.
-    </p>
-  </details>
-</section>
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            [(ngModel)]="enquiry.mobile"
+            name="mobile"
+            required />
 
+          <input
+            type="text"
+            placeholder="Service Type"
+            [(ngModel)]="enquiry.serviceType"
+            name="serviceType"
+            required />
+
+          <textarea
+            placeholder="Your Requirement"
+            [(ngModel)]="enquiry.message"
+            name="message">
+          </textarea>
+
+          <button type="submit" [disabled]="loading">
+            {{ loading ? 'Please wait...' : 'Submit' }}
+          </button>
+
+        </form>
+
+        <!-- SUCCESS -->
+        <div class="success-box" *ngIf="success">
+          <div class="tick">✔</div>
+          <p>Enquiry submitted successfully</p>
+        </div>
+
+        <!-- ERROR -->
+        <p class="error" *ngIf="error">
+          Something went wrong. Please try again.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- ===== Services Grid ===== -->
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let s of services">
+
+        <div class="img-container">
+          <img [src]="s.img" [alt]="s.title" />
+        </div>
+
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+
+        <button
+          class="enquire-btn"
+          (click)="openEnquiryForm(s.title)">
+          Enquire Now
+        </button>
+
+      </div>
+    </div>
+
+  </section>
 
 </div>
